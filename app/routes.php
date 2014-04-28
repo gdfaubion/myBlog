@@ -11,4 +11,11 @@
 |
 */
 
+//home page
 Route::get('/', 'HomeController@showHome');
+
+//whack-a-buzz game
+Route::get('/whack', 'HomeController@showWhack');
+
+//Form request:: POST action will trigger to controller
+Route::post('/','ContactController@getContactUsForm');

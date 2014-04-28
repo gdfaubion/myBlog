@@ -519,9 +519,9 @@
                     <div class="text-center">
                       <ul class="control-profolio list-inline">
                         <li class="filter active" data-filter="all">All</li>
-                        <li class="filter" data-filter="webdesign">Web Design</li>
+<!--                         <li class="filter" data-filter="webdesign">Web Design</li>
                         <li class="filter" data-filter="websiteapp">WebsiteApp</li>
-                        <li class="filter" data-filter="mobileapp">MobileApp</li>
+                        <li class="filter" data-filter="mobileapp">MobileApp</li> -->
                       </ul>
                     </div>
                     <!-- =========
@@ -534,32 +534,35 @@
                     <ul id='portfolio-grid' class="list-unstyled grid-portfolio">
                       <li class="mix webdesign">
                         <div class="item-portfolio">
-                          <a href="assets/images/portfolio/big/portfolio-big.png" class="preview-portfolio imgWrapper image-popup">
+                          <a href="assets/images/portfolio/spotspy.png" class="preview-portfolio imgWrapper image-popup" style="height:155px">
                             <div class="mask"><div class="icn-center"><i class="fa fa-link "></i></div></div>
-                            <img src="assets/images/portfolio/portfolio.png" alt="" class="img-responsive"/>
+                            <img src="assets/images/portfolio/spotspy.png" alt="" class="img-responsive"/>
                           </a>
-                          <div class="desc-portfolio"><h5>PERSONAL  PROJECT <small>a Web Design</small></h5></div>
+                          <p>Spot Spy is a web app that allows the user to reserve a parking spot in a city lot. It was built in a vagrant enviroment using Laravel, JavaScript, jQuery, MYSQL, HTML5 and CSS. We also included two APIs TWILIO and Stripe. Go ahead and check it out!</p>
+                          <div class="desc-portfolio"><h5><a href="http://spotspy.us/"> SpotSpy</a><small>a Web App</small></h5></div>
                         </div>
                       </li>
                       <li class="mix websiteapp">
                         <div class="item-portfolio">
-                          <a href="http://www.youtube.com/watch?v=0O2aH4XLbto" class="preview-portfolio imgWrapper popup-iframe">
-                            <div class="mask"><div class="icn-center"><i class="fa fa-youtube "></i></div></div>
-                            <img src="assets/images/portfolio/portfolio.png" alt="" class="img-responsive"/>
+                          <a href="assets/images/portfolio/whackgame.png" class="preview-portfolio imgWrapper image-popup" style="height:170px">
+                            <div class="mask"><div class="icn-center"><i class="fa fa-link "></i></div></div>
+                            <img src="assets/images/portfolio/whackgame.png" alt="" class="img-responsive"/>
                           </a>
-                          <div class="desc-portfolio"><h5>PERSONAL  PROJECT <small>a Web Design</small></h5></div>
+                          <p>I built this "whack-a-mole" game using HTML5, CSS3 and jQuery. It was a fun project to complete and something I love to show off! It's Toy Story themed because why not? Go ahead and play or check it out over on my <a href="https://github.com/gdfaubion/Codeup.dev/blob/master/public/whack.html">github</a>!</p>
+                          <div class="desc-portfolio"><h5><a href="">Whack-A-Buzz</a><small>a jQuery driven game.</small></h5></div>
                         </div>
                       </li>
                       <li class="mix webdesign">
                         <div class="item-portfolio">
-                          <a href="https://vimeo.com/45830194" class="preview-portfolio imgWrapper popup-iframe">
-                            <div class="mask"><div class="icn-center"><i class="fa fa-vimeo-square "></i></div></div>
-                            <img src="assets/images/portfolio/portfolio.png" alt="" class="img-responsive"/>
+                          <a href="assets/images/portfolio/blackjack.png" class="preview-portfolio imgWrapper image-popup" style="height:170px">
+                            <div class="mask"><div class="icn-center"><i class="fa fa-link"></i></div></div>
+                            <img src="assets/images/portfolio/blackjack.png" alt="" class="img-responsive"/>
                           </a>
-                          <div class="desc-portfolio"><h5>PERSONAL  PROJECT <small>a Web Design</small></h5></div>
+                          <p>I created several command line applications when I ws first learning PHP. To list a few I created: Blackjack, 99 bottles, FizzBuzz, Currency Converter and a high-low game. You can check them out on my <a href="https://github.com/gdfaubion/codeup_exercises/tree/master/codeup_challenges">github</a>!</p>
+                          <div class="desc-portfolio"><h5> BlackJack, 99 Bottles, Etc.. <small>Command Line Apps</small></h5></div>
                         </div>
                       </li>
-                      <li class="mix websiteapp">
+<!--                       <li class="mix websiteapp">
                         <div class="item-portfolio">
                           <a href="https://maps.google.com/maps?q=221B+Baker+Street,+London,+United+Kingdom&amp;hl=en&amp;t=v&amp;hnear=221B+Baker+St,+London+NW1+6XE,+United+Kingdom" class="preview-portfolio imgWrapper popup-iframe">
                             <div class="mask"><div class="icn-center"><i class="fa fa-map-marker "></i></div></div>
@@ -614,7 +617,7 @@
                           </a>
                           <div class="desc-portfolio"><h5>PERSONAL  PROJECT <small>a Web Design</small></h5></div>
                         </div>
-                      </li>
+                      </li> -->
                     </ul>
                     <!-- =========
                     End grid postfolio section
@@ -720,21 +723,21 @@
                     <!-- =========
                     Start map section
                     ===================================-->
-                    <div class="map-area">
+ <!--                    <div class="map-area">
                       <div id="map"></div>
                       <div class="info-map">
                         <h3>Contact Info</h3>
                         <ul class="list-unstyled list-info">
-                          <li><i class="fa fa-home"></i> Haltern am See, Weseler Str. 151</li>
-                          <li><i class="fa fa-phone"></i> +62-867-7887</li>
-                          <li><i class="fa fa-facebook"></i> <a href="#">id.envato</a></li>
-                          <li><i class="fa fa-twitter"></i> <a href="#">id.envato </a></li>
-                          <li><i class="fa fa-linkedin"></i> <a href="#">idea</a></li>
+                          <li><i class="fa fa-home"></i>San Antonio, Texas</li>
+                          <li><i class="fa fa-phone"></i>(214) 223-6190</li>
+                          <li><i class="fa fa-github"></i> <a href="https://github.com/gdfaubion">/gdfaubion</a></li>
+                          <li><i class="fa fa-twitter"></i> <a href="https://twitter.com/gdfaubion">@gdfaubion</a></li>
+                          <li><i class="fa fa-linkedin"></i> <a href="https://www.linkedin.com/in/gracefaubion">linkedin.com/in/gracefaubion/</a></li>
                         </ul>
                       </div>
                     </div>
                     <div class="deviter"></div>
-                    <br/>
+                    <br/> -->
                     <!-- =========
                     End map section
                     ===================================-->
@@ -743,41 +746,41 @@
                     <!-- =========
                     Start form contact section
                     ===================================-->
-                    <form >
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group">
-                            <label for="FullnameForm">Fullname</label>
-                            <input type="text" class="form-control" id="FullnameForm" placeholder="Enter Fullname">
+                            {{ Form:: open(array('action' => 'ContactController@getContactUsForm', 'role' => 'form', 'method' => 'post')) }}
+                            {{ Form:: label ('full_name', 'Name*' )}}
+                            {{ Form:: text ('full_name', '', array('class' => "form-control", 'id' => "fullname", "placeholder" => 'Enter Name') )}}
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
-                            <label for="CompanyForm">Company</label>
-                            <input type="text" class="form-control" id="CompanyForm" placeholder="Enter Company">
+                            {{ Form:: label ('company_name', 'Company' )}}
+                            {{Form:: text ('company_name', '', array('class' => 'form-control', 'id' => 'CompanyForm', 'placeholder' => 'Company Name'))}}
                           </div>
                         </div>
                       </div>
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group">
-                            <label for="EmailForm">Email Address</label>
-                            <input type="email" class="form-control" id="EmailForm" placeholder="Enter Address">
+                            {{Form:: label ('email', 'Email Address*')}}
+                            {{Form:: text ('email', '', array('class' => 'form-control', 'id' => 'EmailForm', 'placeholder' => 'example@email.com'))}}
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
-                            <label for="PhoneForm">Phone Number</label>
-                            <input type="text" class="form-control" id="PhoneForm" placeholder="Enter Phone NUmber">
+                            {{Form:: label ('phone_number', 'Phone Number')}}
+                            {{Form:: text ('phone_number', '', array('class' => 'form-control', 'id' => 'PhoneForm', 'placeholder' => 'Phone Number'))}}
                           </div>
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="MesageForm">Message</label>
-                        <textarea class="form-control" rows="8" id="MesageForm" placeholder="Enter Message"></textarea>
+                        {{Form:: label ('message', 'Message')}}
+                        {{Form:: textarea ('message', '', array('class' => 'form-control', 'rows' => '8', 'id' => 'MessageForm', 'placeholder' => 'Enter Message'))}}
                       </div>
-                      <button type="submit" class="btn btn-flat btn-lg"><span class="glyphicon glyphicon-send"></span> Send</button>
-                    </form>
+                      {{Form:: submit ('Send', array('class' => 'btn btn-flat btn-lg'))}}
+                      {{Form::close()}}
                     <!-- =========
                     End form contact section
                     ===================================-->
@@ -803,7 +806,7 @@
             Start Footer section
             ===================================-->
             <footer class="footer">
-              Design By Yobio 
+              Grace Faubion's Website
             </footer>
             <!-- =========
             End Footer section
