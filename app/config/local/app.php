@@ -14,5 +14,6 @@ return array(
 	*/
 
 	'debug' => true,
+	'url' => 'http://blog2.dev'
 
 );

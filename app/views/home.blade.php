@@ -549,7 +549,7 @@
                             <img src="assets/images/portfolio/whackgame.png" alt="" class="img-responsive"/>
                           </a>
                           <p>I built this "whack-a-mole" game using HTML5, CSS3 and jQuery. It was a fun project to complete and something I love to show off! It's Toy Story themed because why not? Go ahead and play or check it out over on my <a href="https://github.com/gdfaubion/Codeup.dev/blob/master/public/whack.html">github</a>!</p>
-                          <div class="desc-portfolio"><h5><a href="">Whack-A-Buzz</a><small>a jQuery driven game.</small></h5></div>
+                          <div class="desc-portfolio"><h5><a href="{{{action('HomeController@showWhack')}}}">Whack-A-Buzz</a><small>a jQuery driven game.</small></h5></div>
                         </div>
                       </li>
                       <li class="mix webdesign">
@@ -749,37 +749,37 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group">
-                            {{ Form:: open(array('action' => 'ContactController@getContactUsForm', 'role' => 'form', 'method' => 'post')) }}
+                            {{ Form::open(array('action' => 'ContactController@getContactUsForm', 'role' => 'form', 'method' => 'post')) }}
                             {{ Form:: label ('full_name', 'Name*' )}}
                             {{ Form:: text ('full_name', '', array('class' => "form-control", 'id' => "fullname", "placeholder" => 'Enter Name') )}}
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
-                            {{ Form:: label ('company_name', 'Company' )}}
-                            {{Form:: text ('company_name', '', array('class' => 'form-control', 'id' => 'CompanyForm', 'placeholder' => 'Company Name'))}}
+                            {{ Form::label ('company_name', 'Company' )}}
+                            {{Form::text ('company_name', '', array('class' => 'form-control', 'id' => 'CompanyForm', 'placeholder' => 'Company Name'))}}
                           </div>
                         </div>
                       </div>
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group">
-                            {{Form:: label ('email', 'Email Address*')}}
-                            {{Form:: text ('email', '', array('class' => 'form-control', 'id' => 'EmailForm', 'placeholder' => 'example@email.com'))}}
+                            {{Form::label ('email', 'Email Address*')}}
+                            {{Form::text ('email', '', array('class' => 'form-control', 'id' => 'EmailForm', 'placeholder' => 'example@email.com'))}}
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
-                            {{Form:: label ('phone_number', 'Phone Number')}}
-                            {{Form:: text ('phone_number', '', array('class' => 'form-control', 'id' => 'PhoneForm', 'placeholder' => 'Phone Number'))}}
+                            {{Form::label ('phone_number', 'Phone Number')}}
+                            {{Form::text ('phone_number', '', array('class' => 'form-control', 'id' => 'PhoneForm', 'placeholder' => 'Phone Number'))}}
                           </div>
                         </div>
                       </div>
                       <div class="form-group">
-                        {{Form:: label ('message', 'Message')}}
-                        {{Form:: textarea ('message', '', array('class' => 'form-control', 'rows' => '8', 'id' => 'MessageForm', 'placeholder' => 'Enter Message'))}}
+                        {{Form::label ('message', 'Message')}}
+                        {{Form::textarea ('message', '', array('class' => 'form-control', 'rows' => '8', 'id' => 'MessageForm', 'placeholder' => 'Enter Message'))}}
                       </div>
-                      {{Form:: submit ('Send', array('class' => 'btn btn-flat btn-lg'))}}
+                      {{Form::submit ('Send', array('class' => 'btn btn-flat btn-lg'))}}
                       {{Form::close()}}
                     <!-- =========
                     End form contact section

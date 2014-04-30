@@ -3,7 +3,7 @@
 	<title> | Whack.A.Buzz</title>
 	<link href='http://fonts.googleapis.com/css?family=Nothing+You+Could+Do' rel='stylesheet' type='text/css'>
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<script src="/js/jquery.js"></script>
 	<style type="text/css">
 		#game-board{
@@ -78,6 +78,7 @@
 		<p>
 			<button class="btn btn-danger" id="start">Start</button>
 	 		<button class="btn btn-danger" id="play-again">Play Again?!</button>
+	 		<p><a href="{{{action('HomeController@showHome')}}}"><button class="btn btn-danger" >Go Home</button></a></p>
 		</p>
 	</div>
 	<script type="text/javascript">
@@ -128,13 +129,13 @@
   				}
   			}, 1000);
 
-        	BuzzInterval = setInterval(newBuzz, speed);	
+        	buzzInterval = setInterval(newBuzz, speed);	
 
 		};
 
 		$('img').on('click', function(){
 			$(this).fadeOut();
-			clearInterval(BuzzInterval);
+			clearInterval(buzzInterval);
 			if(score <= 5) {
 				speed = 1000;
 			} else if(score <= 10) {
@@ -142,7 +143,7 @@
 			} else if(score <= 15) {
 				speed = 350;
 			}
-		    BuzzInterval = setInterval(newBuzz, speed);
+		    buzzInterval = setInterval(newBuzz, speed);
 			score++;
 			if(score > highScore) {
 				highScore = score;
