@@ -21,10 +21,39 @@ class HomeController extends BaseController {
 	}
 	public function showHome()
 	{
-		return View::make('home');
+		$posts = Post::all();
+
+		return View::make('home')->with('posts', $posts);
 	}
 	public function showWhack()
 	{
 		return View::make('whackGame');
+	}
+	public function showAdmin()
+	{
+		return View::make('admin');
+	}
+	public function doLogin()
+	{
+		if (Auth::attempt(array('email' => Input::get('email'), 'password' => Input::get('password'))))
+		{	
+			Session::flash('successMessage', 'Login Successfull');
+
+		    return View::make('admin');
+		}
+		else
+		{
+			Session::flash('errorMessage', 'Unable to login. Please check your email and password.');
+
+		    return Redirect::back()->withInput();
+		}
+	}
+	public function logout()
+	{
+		Auth::logout();
+
+		Session::flash('successMessage', 'Logout Successfull');
+
+		return View::make('admin');
 	}
 }

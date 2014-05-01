@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> | Create New Blog Post</title>
+    <title> | The Blog </title>
     <!-- Bootstrap -->
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/assets/js/jquery.js"></script>
 
     <!-- CSS Font Icon and Plugins -->
     <link href="/assets/font/fa/css/font-awesome.min.css" rel="stylesheet">
@@ -80,14 +81,15 @@
                 <!-- =========
                 Show Yor Name Section
                 ===================================-->
+
                 <h1 class="name"> Grace Faubion <small>Web Developer</small></h1>
 
                 <!-- =========
                 Special Nav for BLog page
                 ===================================-->
                 <nav class="nav-blog">
-                  <a href="index.html" class="btn btn-left" data-toggle="tooltip" data-placement="left" title="" data-original-title="Home"> <i class="fa fa-home"></i></a>
-                  <a href="blog_list.html" class="btn btn-big-blog">Blog</a>
+                  <a href="{{{action('HomeController@showHome')}}}" class="btn btn-left" data-toggle="tooltip" data-placement="left" title="" data-original-title="Home"> <i class="fa fa-home"></i></a>
+                  <p class="btn btn-big-blog">Blog</p>
                   <a href="#" class="btn btn-right" data-toggle="tooltip" data-placement="right" title="" data-original-title="Reload Page"> <i class="fa fa-refresh"></i></a>
                 </nav>
 
@@ -105,6 +107,13 @@
             Start Content section
             ===================================-->
             <section class="content open" id="main-content">
+            <!-- Success and Error messages when submiting forms -->
+                 @if (Session::has('successMessage'))
+                  <div class="alert alert-success" style="text-align:center">{{{ Session::get('successMessage') }}}</div>
+                 @endif
+                 @if (Session::has('errorMessage'))
+                  <div class="alert alert-danger" style="text-align:center">{{{ Session::get('errorMessage') }}}</div>
+                 @endif
               <div class="body-content" id="blog">
 
                 <div class="row">
@@ -114,7 +123,7 @@
                       <div class="blog-post">
                         <div class="row">
                           <div class="col-md-8">
-                            <h3 class="title-post"><a href="blog_single.html"><i class="fa fa-picture-o"></i>{{{$post->title}}}</a></h3>
+                            <h3 class="title-post"><a href="blog_single.html"><i class="fa fa-bullhorn"></i>{{{$post->title}}}</a></h3>
                           </div>
                           <div class="col-md-4">
                             <div class="blog-date">
@@ -133,16 +142,13 @@
                         </div>
                       </div>
                       @endforeach
+               </div>
                     <!-- =========
                     Start Pagination section
                     ===================================-->
                     <div class="flat-pagination text-center">
                       <ul class="pagination">
-                        <li><a href="#">&laquo;</a></li>
-                        <li class="active"><span>1</span></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">&raquo;</a></li>
+                        <li>{{$posts->links()}}</li>
                       </ul> 
                     </div>
                     <!-- =========
@@ -151,8 +157,6 @@
 
                   </div>
                 </div>
-
-
               </div>
 
               <a id="backtotop" href="#"><i class="fa fa-arrow-up"></i></a>
@@ -197,6 +201,11 @@
     <!-- =========
     Javascript load 
     ===================================-->
+   <!-- Fade out error or success messages after forms are submitted -->
+    <script type="text/javascript">
+        $('.alert-success').fadeOut(3000);
+        $('.alert-danger').fadeOut(3000);
+    </script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>

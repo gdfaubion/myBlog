@@ -12,8 +12,9 @@ class ContactController extends BaseController {
 
 			$message->to('gdfaubion@gmail.com', 'Grace')->subject('Test Email');
 		});
-	
-		return View::make('home');
+		$posts = Post::all();
+
+		return View::make('home')->with('posts', $posts);
 
 	}
 

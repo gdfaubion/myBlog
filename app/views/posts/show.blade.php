@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> | Create New Blog Post</title>
+    <title> | Blog Post</title>
     <!-- Bootstrap -->
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/assets/js/jquery.js"></script>
 
     <!-- CSS Font Icon and Plugins -->
     <link href="/assets/font/fa/css/font-awesome.min.css" rel="stylesheet">
@@ -86,7 +87,7 @@
                 Special Nav for BLog page
                 ===================================-->
                 <nav class="nav-blog">
-                  <a href="index.html" class="btn btn-left" data-toggle="tooltip" data-placement="left" title="" data-original-title="Home"> <i class="fa fa-home"></i></a>
+                  <a href="{{{action('PostsController@index')}}}" class="btn btn-left" data-toggle="tooltip" data-placement="left" title="" data-original-title="Home"> <i class="fa fa-home"></i></a>
                   <a href="blog_list.html" class="btn btn-big-blog">Blog</a>
                   <a href="#" class="btn btn-right" data-toggle="tooltip" data-placement="right" title="" data-original-title="Reload Page"> <i class="fa fa-refresh"></i></a>
                 </nav>
@@ -112,7 +113,10 @@
                       <div class="blog-post">
                         <div class="row">
                           <div class="col-md-8">
-                            <h3 class="title-post"><i class="fa fa-picture-o"></i>{{{$post->title}}}</h3>
+                            <h3 class="title-post"><i class="fa fa-coffee"></i>{{{$post->title}}}</h3>
+                          <p>
+                            <a href="{{{action('PostsController@edit', $post->id)}}}">Edit</a> | <a href="#" id="btnDeletePost">Delete</a>
+                          </p>
                           </div>
                           <div class="col-md-4">
                             <div class="blog-date">
@@ -132,6 +136,9 @@
               <div class="bg-line"></div>
             </section>
 
+            {{ Form::open(array('action' => array('PostsController@destroy', $post->id), 'method' => 'delete', 'id' => 'formDeletePost')) }}
+            {{ Form::close() }}
+
             <!-- =========
             End Content section
             ===================================-->
@@ -141,7 +148,7 @@
             Start Footer section
             ===================================-->
             <footer class="footer">
-              Design By Yobio 
+             Grace Faubion's Blog
             </footer>
             <!-- =========
             End Footer section
@@ -170,6 +177,20 @@
     <!-- =========
     Javascript load 
     ===================================-->
+
+    <script type="text/javascript">
+
+        $('#btnDeletePost').on('click', function (e) {
+
+          e.preventDefault();
+
+          if(confirm("Are you sure you want to delete this post?")) {
+            $('#formDeletePost').submit();
+          }
+
+        });
+
+    </script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>

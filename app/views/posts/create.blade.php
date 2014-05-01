@@ -86,7 +86,7 @@
                 Special Nav for BLog page
                 ===================================-->
                 <nav class="nav-blog">
-                  <a href="index.html" class="btn btn-left" data-toggle="tooltip" data-placement="left" title="" data-original-title="Home"> <i class="fa fa-home"></i></a>
+                  <a href="{{{action('PostsController@index')}}}" class="btn btn-left" data-toggle="tooltip" data-placement="left" title="" data-original-title="Home"> <i class="fa fa-home"></i></a>
                   <a href="blog_list.html" class="btn btn-big-blog">Blog</a>
                   <a href="#" class="btn btn-right" data-toggle="tooltip" data-placement="right" title="" data-original-title="Reload Page"> <i class="fa fa-refresh"></i></a>
                 </nav>

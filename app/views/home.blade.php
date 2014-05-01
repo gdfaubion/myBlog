@@ -7,6 +7,7 @@
     <title>Grace's Blog</title>
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/assets/js/jquery.js"></script>
 
     <!-- CSS Font Icon and Plugins -->
     <link href="assets/font/fa/css/font-awesome.min.css" rel="stylesheet">
@@ -645,56 +646,57 @@
                         STart blog post section
                         ===================================-->
                         <div class="blog-posts">
+                        @foreach ($posts as $post)
                           <div class="blog-post">
                             <div class="row">
                               <div class="col-md-8">
-                                <h3 class="title-post"><a href="blog_single.html"><i class="fa fa-picture-o"></i> An Example Post With An Image</a></h3>
+                                <h3 class="title-post"><a href="blog_single.html"><i class="fa fa-bullhorn"> | </i>{{{$post->title}}}</a></h3>
                               </div>
                               <div class="col-md-4">
                                 <div class="blog-date">
-                                  3 Mar, 2014
+                                  {{{ $post->created_at->format('l, F jS') }}}
                                 </div>
                               </div>
                             </div>
                             <div class="body-post">
-                              <div class="imgWrapper">
+<!--                               <div class="imgWrapper">
                                 <img src="assets/images/blog/blog.png" class="img-full blog-img" alt=""/>
-                              </div>
-                              <p>Designer focuses on writing clean. by <strong>UnKown</strong></p>
-                              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+                              </div> -->
+                              <p>{{{Str::words($post->body, 10)}}}</p>
                               <p>
-                                <a href="blog_single.html" class="btn btn-flat style2">Continue Reading...</a>
+                                <a href="{{{action('PostsController@show', $post->id)}}}" class="btn btn-flat style2">Continue Reading...</a>
                               </p>
                               <div class="love-post-btn">
-                                <a href="#"><span><i class="fa fa-heart"></i> 3</span></a>
+                                <a href="#"><span><i class="fa fa-heart"></i>0</span></a>
                               </div>
                             </div>
                           </div>
+                          @endforeach
                           <div class="blog-post">
                             <div class="row">
                               <div class="col-md-8">
-                                <h3 class="title-post"><a href="blog_single.html"><i class="fa fa-video-camera"></i> An Example Post With A Video</a></h3>
+                                <!-- <h3 class="title-post"><a href="blog_single.html"><i class="fa fa-video-camera"></i> An Example Post With A Video</a></h3> -->
                               </div>
                               <div class="col-md-4">
                                 <div class="blog-date">
-                                  3 Mar, 2014
+                                  <!-- 3 Mar, 2014 -->
                                 </div>
                               </div>
                             </div>
                             <div class="body-post">
                               <div class="imgWrapper">
-                                <img src="assets/images/blog/blog.png" class="img-full blog-img" alt=""/>
-                                <div class="playbtn">
+                                <!-- <img src="assets/images/blog/blog.png" class="img-full blog-img" alt=""/> -->
+<!--                                 <div class="playbtn">
                                   <a href="https://vimeo.com/45830194" class="popup-iframe"><span class="fa-4x fa fa-play"></span></a>
-                                </div>
+                                </div> -->
                               </div>
-                              <p>Designer focuses on writing clean. by <strong>UnKown</strong></p>
-                              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+                              <p><!-- Designer focuses on writing clean. by <strong>UnKown</strong> --></p>
+                              <p><!-- Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. --></p>
                               <p>
-                                <a href="blog_single.html" class="btn btn-flat style2">Continue Reading...</a>
+                                <!-- <a href="blog_single.html" class="btn btn-flat style2">Continue Reading...</a> -->
                               </p>
                               <div class="love-post-btn">
-                                <a href="#"><span><i class="fa fa-heart"></i> 10</span></a>
+                                <!-- <a href="#"><span><i class="fa fa-heart"></i> 10</span></a> -->
                               </div>
                             </div>
                           </div>
@@ -703,7 +705,7 @@
                         End blog post section
                         ===================================-->
 
-                        <a href="blog_list.html" class="btn btn-flat btn-lg btn-block">View All Post</a>
+                        <a href="{{{action('PostsController@index')}}}" class="btn btn-flat btn-lg btn-block">View All Post</a>
                       </div>
                     </div>
                   </div>
@@ -723,7 +725,7 @@
                     <!-- =========
                     Start map section
                     ===================================-->
- <!--                    <div class="map-area">
+<!--                     <div class="map-area">
                       <div id="map"></div>
                       <div class="info-map">
                         <h3>Contact Info</h3>

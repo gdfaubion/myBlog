@@ -2,6 +2,16 @@
 
 class PostsController extends BaseController {
 
+	public function __construct()
+	{
+	    // call base controller constructor
+	    parent::__construct();
+
+	    // run auth filter before all methods on this controller except index and show
+	    $this->beforeFilter('auth.basic', array('except' => array('index', 'show')));
+	    $this->beforeFilter('post.protect', array('only' => array('edit', 'update', 'destroy')));
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -9,7 +19,8 @@ class PostsController extends BaseController {
 	 */
 	public function index()
 	{
-		$posts = Post::all();
+		$posts = Post::paginate(4);
+
 		return View::make('posts.index')->with('posts', $posts);
 	}
 
@@ -34,15 +45,35 @@ class PostsController extends BaseController {
 	{
 		Log::info(Input::all());
 
-		$post = new Post();
+		// create the validator
+	    $validator = Validator::make(Input::all(), Post::$rules);
 
-		$post->title = Input::get('title');
+	    // attempt validation
+	    if ($validator->fails())
+	    {
+	        // validation failed, redirect to the post create page with validation errors and old inputs
+	    	Session::flash('errorMessage', 'Post could not be created successfully - see form errors');
 
-		$post->body = Input::get('body');
+	        return Redirect::back()->withInput()->withErrors($validator);
+	    }
+	    else
+	    {
+	        // validation succeeded, create and save the post
 
-		$post->save();
+	        $post = new Post();
 
-		return Redirect::action('PostsController@index');
+			$post->title = Input::get('title');
+
+			$post->body = Input::get('body');
+
+			$post->save();
+
+			Session::flash('successMessage', 'Post created successfully');
+
+			return Redirect::action('PostsController@index');
+
+	    }
+
 	}
 
 
@@ -55,7 +86,7 @@ class PostsController extends BaseController {
 	public function show($id)
 	{
 		$post = Post::findOrFail($id);
-		
+
 		return View::make('posts.show')->with('post', $post);
 	}
 
@@ -68,7 +99,9 @@ class PostsController extends BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$post = Post::findOrFail($id);
+
+		return View::make('posts.create')->with('post', $post);
 	}
 
 
@@ -80,7 +113,40 @@ class PostsController extends BaseController {
 	 */
 	public function update($id)
 	{
-		//
+
+		//find post id
+		$post = Post::findOrFail($id);
+		// create the validator
+		$validator = Validator::make(Input::all(), Post::$rules);
+		// attempt validation
+		if($validator->fails()) {
+			// validation fail so redirect back with input and errors
+			Session::flash('errorMessage', 'Post could not be updated successfully - see form errors');
+
+			return Redirect::back()->withInput()->withErrors($validator);
+
+		} else {
+			//validate succeeded create and save the post
+
+			$post->title = Input::get('title');
+
+			$post->body = Input::get('body');
+
+			if ( Input::hasFile('image') ) { 
+
+				$file = Input::file('image');
+
+				$post->imageUpload($file);
+			}
+
+			// $post->user_id = Auth::user()->id;
+
+			$post->save();
+			
+			Session::flash('successMessage', 'Post updated successfully');
+
+			return Redirect::action('PostsController@index');
+		}
 	}
 
 
@@ -92,7 +158,12 @@ class PostsController extends BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		//This will delete a specific post.
+		Post::find($id)->delete();
+
+		Session::flash('successMessage', 'Post deleted successfully');
+
+		return Redirect::action('PostsController@index');
 	}
 
 
