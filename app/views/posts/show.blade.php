@@ -27,6 +27,11 @@
     <link rel="apple-touch-icon" sizes="129x129" href="assets/images/icon.png"> 
     
     <link href="/assets/css/yourcss.css" rel="stylesheet"> 
+    <style type="text/css">
+      .social_icons{
+        font-size: 3em;
+      }
+    </style> 
   </head>
   <body>
     <!-- =========
@@ -69,10 +74,10 @@
                 ===================================-->
                 <div class="portrait-img-area">
                   <img src="/assets/images/Grace.jpg" alt="avatar" class="avatar img-circle"/>
-                  <div class="profile-links">
+<!--                   <div class="profile-links">
                     <a href="" class="facebook"  data-toggle="tooltip" data-placement="left" title="Facebook"><i class="fa fa-facebook"></i></a>
                     <a href="" class="twitter"  data-toggle="tooltip" data-placement="right" title="Twitter"><i class="fa fa-twitter"></i></a>
-                  </div>
+                  </div> -->
                 </div>
                 <!-- =========
                 End  portrait image Section
@@ -114,9 +119,11 @@
                         <div class="row">
                           <div class="col-md-8">
                             <h3 class="title-post"><i class="fa fa-coffee"></i>{{{$post->title}}}</h3>
+                          @if(Auth::check())
                           <p>
                             <a href="{{{action('PostsController@edit', $post->id)}}}">Edit</a> | <a href="#" id="btnDeletePost">Delete</a>
                           </p>
+                          @endif
                           </div>
                           <div class="col-md-4">
                             <div class="blog-date">
@@ -125,8 +132,29 @@
                           </div>
                         </div>
                         <div class="body-post">
+                          <blockquote>
+                            <p>
+                              <img src="{{{$post->image}}}">
+                            </p>
+                          </blockquote>
                           <p>{{{$post->body}}}</p>
                         </div>
+                        <!-- disqus comments section -->
+                        <div id="disqus_thread"></div>
+                            <script type="text/javascript">
+                                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                                var disqus_shortname = 'gracefaubionsblog'; // required: replace example with your forum shortname
+
+                                /* * * DON'T EDIT BELOW THIS LINE * * */
+                                (function() {
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                                })();
+                            </script>
+                            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                        <!-- disqus comment section -->
                       </div>
                     </div>
                   </div>
@@ -148,7 +176,9 @@
             Start Footer section
             ===================================-->
             <footer class="footer">
-             Grace Faubion's Blog
+              <a href="https://twitter.com/gdfaubion" class="twitter social_icons" title="Twitter"><i class="fa fa-twitter"></i></a>
+              <a href="https://github.com/gdfaubion" class="github social_icons" title="Github"><i class="fa fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/gracefaubion" class="linkedin social_icons" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
             </footer>
             <!-- =========
             End Footer section
@@ -169,11 +199,11 @@
     <!-- =========
     Link Config Custom styles
     ===================================-->
-    
+   <!--  
     <a href="modal_configuration.html" class="configuration ajax_link"><i class="fa fa-cog"></i> Configuration</a>
     <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true"> </div>
 
-
+ -->
     <!-- =========
     Javascript load 
     ===================================-->
@@ -190,6 +220,19 @@
 
         });
 
+    </script>
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'gracefaubionsblog'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
     </script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

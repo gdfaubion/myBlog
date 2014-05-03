@@ -10,13 +10,22 @@
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
         <link rel="stylesheet" href="/css/flatly-bootstrap.css">
         <link rel="stylesheet" href="/css/resume.css">
+        <style type="text/css">
+            table, th{
+                text-align: center;
+                margin-top: 20px;
+            }
+            i{
+                font-size: 1em;
+            }
+        </style>
     </head>
     <body>
         <!-- Nav Bar for all pages -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="{{{ action('PostsController@index') }}}"> Admin</a>
+                     Admin
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
@@ -45,7 +54,43 @@
 
         <div class="container">
         @if(Auth::check())
-        	<h1>Welcome Admin!</h1>
+        	<h1>Welcome {{{ Auth::user()->first_name }}}!</h1>
+            <div class="container col-md-6 table-responsive">
+                <table class="table table-hover table-bordered">
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Date Created</th>
+                        <th>Edit</th>
+                    </tr>
+                    @foreach($posts as $post)
+                    <tr>
+                        <td>{{{$post->id}}}</td>
+                        <td><a href="{{{action('PostsController@show', $post->id)}}}">{{{$post->title}}}</a></td>
+                        <td>{{{ $post->created_at->format('l, F jS') }}}</td>
+                        <td><a href="{{{action('PostsController@edit', $post->id)}}}"><i class="fa fa-pencil"></i></a></td>
+                    </tr>
+                    @endforeach
+                </table>
+            </div>
+            <div class="container col-md-6">
+                <table class="table table-hover table-bordered">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    @foreach($users as $user)
+                    <tr>
+                        <td>{{{$user->id}}}</td>
+                        <td>{{{$user->first_name}}} {{{$user->last_name}}}</td>
+                        <td><a href="#"><i class="fa fa-pencil"></i></a></td>
+                        <td><a href="#" id="btnDeletePost"><i class="fa fa-trash-o"></i></a></td>
+                    </tr>
+                    @endforeach
+                </table>
+            </div>
         @else
         	<div class="col-md-4"></div>
        		<div class="container col-md-4">

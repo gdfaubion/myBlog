@@ -12,7 +12,10 @@ class ContactController extends BaseController {
 
 			$message->to('gdfaubion@gmail.com', 'Grace')->subject('Test Email');
 		});
+
 		$posts = Post::all();
+
+		Session::flash('successMessage', 'Thank You - Your message was sent successfully!');
 
 		return View::make('home')->with('posts', $posts);
 

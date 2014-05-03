@@ -8,7 +8,7 @@ class PostsController extends BaseController {
 	    parent::__construct();
 
 	    // run auth filter before all methods on this controller except index and show
-	    $this->beforeFilter('auth.basic', array('except' => array('index', 'show')));
+	    $this->beforeFilter('auth', array('except' => array('index', 'show')));
 	    $this->beforeFilter('post.protect', array('only' => array('edit', 'update', 'destroy')));
 	}
 
@@ -66,12 +66,18 @@ class PostsController extends BaseController {
 
 			$post->body = Input::get('body');
 
+			if ( Input::hasFile('image') ) { 
+
+				$file = Input::file('image');
+
+				$post->imageUpload($file);
+			}
+
 			$post->save();
 
 			Session::flash('successMessage', 'Post created successfully');
 
 			return Redirect::action('PostsController@index');
-
 	    }
 
 	}

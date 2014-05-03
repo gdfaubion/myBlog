@@ -144,7 +144,7 @@ function init_gmap() {
     $('#map').gmap3({
       action: 'init',
       marker: {
-        address: "Haltern am See, Weseler Str. 151",
+        address: "San Antonio, TX",
         options: {
           icon: new google.maps.MarkerImage("./assets/images/marker.png")
         }

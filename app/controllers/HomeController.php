@@ -30,16 +30,36 @@ class HomeController extends BaseController {
 		return View::make('whackGame');
 	}
 	public function showAdmin()
+	{	
+		$posts = Post::all();
+		$users = User::all();
+
+		$data = array(
+			'posts' => $posts, 
+			'users' => $users 
+		);
+
+		return View::make('admin')->with($data);
+	}
+	public function showLogin()
 	{
-		return View::make('admin');
+		return View::make('login');
 	}
 	public function doLogin()
 	{
 		if (Auth::attempt(array('email' => Input::get('email'), 'password' => Input::get('password'))))
 		{	
+			$posts = Post::all();
+			$users = User::all();
+
+			$data = array(
+				'posts' => $posts, 
+				'users' => $users 
+			);
+
 			Session::flash('successMessage', 'Login Successfull');
 
-		    return View::make('admin');
+		    return View::make('admin')->with($data);
 		}
 		else
 		{

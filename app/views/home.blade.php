@@ -25,7 +25,12 @@
     <link rel="shortcut icon" href="assets/images/faicon.png">
     <link rel="apple-touch-icon" sizes="129x129" href="assets/images/icon.png"> 
     
-    <link href="assets/css/yourcss.css" rel="stylesheet">    
+    <link href="assets/css/yourcss.css" rel="stylesheet"> 
+    <style type="text/css">
+      .social_icons{
+        font-size: 3em;
+      }
+    </style>   
   </head>
   <body>
     <!-- =========
@@ -68,10 +73,10 @@
                 ===================================-->
                 <div class="portrait-img-area">
                   <img src="assets/images/Grace.jpg" alt="avatar" class="avatar img-circle"/>
-                  <div class="profile-links">
+                 <!--  <div class="profile-links">
                     <a href="https://github.com/gdfaubion" class="facebook"  data-toggle="tooltip" data-placement="left" title="Github"><i class="fa fa-github"></i></a>
                     <a href="https://twitter.com/gdfaubion" class="twitter"  data-toggle="tooltip" data-placement="right" title="Twitter"><i class="fa fa-twitter"></i></a>
-                  </div>
+                  </div> -->
                 </div>
                 <!-- =========
                 End  portrait image Section
@@ -87,7 +92,13 @@
                 <!-- =========
                 Start Show Yor Name Section
                 ===================================-->
-
+                <!-- Success and Error messages when submiting forms -->
+                  @if (Session::has('successMessage'))
+                  <div class="alert alert-success" style="text-align:center">{{{ Session::get('successMessage') }}}</div>
+                  @endif
+                  @if (Session::has('errorMessage'))
+                  <div class="alert alert-danger" style="text-align:center">{{{ Session::get('errorMessage') }}}</div>
+                  @endif
               </div>
             </header>
             <!-- =========
@@ -725,7 +736,7 @@
                     <!-- =========
                     Start map section
                     ===================================-->
-<!--                     <div class="map-area">
+                    <div class="map-area">
                       <div id="map"></div>
                       <div class="info-map">
                         <h3>Contact Info</h3>
@@ -739,7 +750,7 @@
                       </div>
                     </div>
                     <div class="deviter"></div>
-                    <br/> -->
+                    <br/>
                     <!-- =========
                     End map section
                     ===================================-->
@@ -808,7 +819,9 @@
             Start Footer section
             ===================================-->
             <footer class="footer">
-              Grace Faubion's Website
+              <a href="https://twitter.com/gdfaubion" class="twitter social_icons" title="Twitter"><i class="fa fa-twitter"></i></a>
+               <a href="https://github.com/gdfaubion" class="github social_icons" title="Github"><i class="fa fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/gracefaubion" class="linkedin social_icons" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
             </footer>
             <!-- =========
             End Footer section
@@ -831,14 +844,18 @@
     Link Config Custom styles
     ===================================-->
 
-    <a href="modal_configuration.html" class="configuration ajax_link"><i class="fa fa-cog"></i> Configuration</a>
+<!--     <a href="modal_configuration.html" class="configuration ajax_link"><i class="fa fa-cog"></i> Configuration</a>
     <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true"> </div>
-
+ -->
 
 
     <!-- =========
     Javascript load 
     ===================================-->
+    <script type="text/javascript">
+        $('.alert-success').fadeOut(10000);
+        $('.alert-danger').fadeOut(10000);
+    </script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
