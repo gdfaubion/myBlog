@@ -91,8 +91,8 @@ class PostsController extends BaseController {
 	 */
 	public function show($id)
 	{
-		$post = Post::findOrFail($id);
-
+		$post = Post::find($id);
+		// $post->body = Markdown::parse($post->body);
 		return View::make('posts.show')->with('post', $post);
 	}
 

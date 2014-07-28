@@ -26,7 +26,12 @@
     <link rel="shortcut icon" href="assets/images/faicon.png">
     <link rel="apple-touch-icon" sizes="129x129" href="assets/images/icon.png"> 
     
-    <link href="/assets/css/yourcss.css" rel="stylesheet"> 
+    <link href="/assets/css/yourcss.css" rel="stylesheet">
+     <style type="text/css">
+      .social_icons{
+        font-size: 3em;
+      }
+    </style> 
   </head>
   <body>
     <!-- =========
@@ -69,10 +74,10 @@
                 ===================================-->
                 <div class="portrait-img-area">
                   <img src="/assets/images/Grace.jpg" alt="avatar" class="avatar img-circle"/>
-                  <div class="profile-links">
+                  <!-- <div class="profile-links">
                     <a href="" class="facebook"  data-toggle="tooltip" data-placement="left" title="Facebook"><i class="fa fa-facebook"></i></a>
                     <a href="" class="twitter"  data-toggle="tooltip" data-placement="right" title="Twitter"><i class="fa fa-twitter"></i></a>
-                  </div>
+                  </div> -->
                 </div>
                 <!-- =========
                 End  portrait image Section
@@ -115,7 +120,7 @@
                   <div class="alert alert-danger" style="text-align:center">{{{ Session::get('errorMessage') }}}</div>
                  @endif
               <div class="body-content" id="blog">
-
+                @if($posts != NUll)
                 <div class="row">
                   <div class="col-md-10 col-md-offset-1">
                     <div class="blog-posts">
@@ -142,6 +147,16 @@
                         </div>
                       </div>
                       @endforeach
+                  @else
+                    <div class="row">
+                      <div class="col-md-10 col-md-offset-1">
+                        <div class="blog-posts">
+                          <h1 style="text-align:center">Coming Soon!</h1>
+                          <h3>No Nlog posts just yet, but soon!!</h3>
+                        </div>
+                      </div>
+                    </div>
+                  @endif
                </div>
                     <!-- =========
                     Start Pagination section
@@ -172,7 +187,9 @@
             Start Footer section
             ===================================-->
             <footer class="footer">
-              Grace Faubion's Blog
+              <a href="https://twitter.com/gdfaubion" class="twitter social_icons" title="Twitter"><i class="fa fa-twitter"></i></a>
+              <a href="https://github.com/gdfaubion" class="github social_icons" title="Github"><i class="fa fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/gracefaubion" class="linkedin social_icons" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
             </footer>
             <!-- =========
             End Footer section
@@ -194,9 +211,9 @@
     Link Config Custom styles
     ===================================-->
     
-    <a href="modal_configuration.html" class="configuration ajax_link"><i class="fa fa-cog"></i> Configuration</a>
+    <!-- <a href="modal_configuration.html" class="configuration ajax_link"><i class="fa fa-cog"></i> Configuration</a>
     <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true"> </div>
-
+ -->
 
     <!-- =========
     Javascript load 

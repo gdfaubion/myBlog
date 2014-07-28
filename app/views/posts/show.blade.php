@@ -132,11 +132,13 @@
                           </div>
                         </div>
                         <div class="body-post">
+                          @if($post->image != NULL)
                           <blockquote>
                             <p>
                               <img src="{{{$post->image}}}">
                             </p>
                           </blockquote>
+                          @endif
                           <p>{{{$post->body}}}</p>
                         </div>
                         <!-- disqus comments section -->

@@ -58,8 +58,8 @@
                        No matter how slowly you go don't stop.<br> -Confucious
                       </div>
                       <div class="item">
-                        Iam available for freelance, if you need my services please
-                        send me an email :)
+                        I'm available for freelance, if you need my services please
+                        send me an email! :)
                       </div>
                     </div>
                   </div>
@@ -150,7 +150,7 @@
                       <div class="col-md-9">
                         <div class="mini-desc">
                           <h2 class="title">Hello, my name is Grace!</h2>
-                          <p>I have a passion for web development and building awesome things! I mostly use languages such as PHP w/ Laravel, JavaScript and jQuery. My goal is to learn a new language or technology every week. I love all the endless possibilities web development brings and would love to work on a project with you!</p>
+                          <p>I have a passion for web development and building awesome things! I mostly use languages such as PHP w/ Laravel, JavaScript and jQuery. One of my goals is to learn new technologies as much as possible. I love all the endless possibilities web development brings and would love to work on a project with you!</p>
                           <p></p>
                         </div>
                       </div>
@@ -432,8 +432,8 @@
                             <li>
                               <span class="caption-skill">MYSQL</span>
                               <div class="progress">
-                                <div class="progress-bar"  style="width: 85%;">
-                                  <span>85% </span>
+                                <div class="progress-bar"  style="width: 60%;">
+                                  <span>60% </span>
                                 </div>
                               </div>
                             </li>
@@ -656,6 +656,7 @@
                         <!-- =========
                         STart blog post section
                         ===================================-->
+                        @if ($posts != NULL)
                         <div class="blog-posts">
                         @foreach ($posts as $post)
                           <div class="blog-post">
@@ -712,6 +713,17 @@
                             </div>
                           </div>
                         </div>
+                        @else
+                          <div class="row">
+                            <div class="col-md-10 col-md-offset-1">
+                              <div class="blog-posts">
+                                <h1 style="text-align:center">Coming Soon!</h1>
+                                <h3>No Nlog posts just yet, but soon!!</h3>
+                              </div>
+                            </div>
+                          </div>
+                          @endif
+
                         <!-- =========
                         End blog post section
                         ===================================-->
