@@ -119,7 +119,7 @@
                   <li class="active"><a href="#about" data-toggle="tab" data-menu="about"><i class="icon-user"></i> <span>About Me</span></a></li>
                   <li><a href="#resume" data-toggle="tab" data-menu="resume"><i class="icon-newspaper"></i>  <span>Resume</span></a></li>
                   <li><a href="#portfolio" data-toggle="tab" data-menu="portfolio"><i class="icon-folder-open"></i> <span>Portfolio</span></a></li>
-                  <li><a href="#blog" data-toggle="tab" data-menu="blog"><i class="icon-pencil"></i> <span >Blog</span></a></li>
+                  <!-- <li><a href="#blog" data-toggle="tab" data-menu="blog"><i class="icon-pencil"></i> <span >Blog</span></a></li> -->
                   <li><a href="#contact" data-toggle="tab" data-menu="contact"><i class="icon-mail"></i> <span>Contact</span></a></li>
                 </ul>
               </nav>
@@ -572,14 +572,14 @@
                           <div class="desc-portfolio"><h5><a href="{{{action('HomeController@showWhack')}}}">Whack-A-Buzz</a><small>a jQuery driven game.</small></h5></div>
                         </div>
                       </li>
-                      <li class="mix webdesign">
-                        <div class="item-portfolio robot">
-                          <a href="assets/images/portfolio/robot.jpg" class="preview-portfolio imgWrapper image-popup" style="height:155px">
+                      <li class="mix websiteapp">
+                        <div class="item-portfolio">
+                          <a href="assets/images/portfolio/css3-robot.jpg" class="preview-portfolio imgWrapper image-popup" style="height:190px">
                             <div class="mask"><div class="icn-center"><i class="fa fa-link "></i></div></div>
-                            <img src="assets/images/portfolio/robot.jpg" alt="HTMl5 and CSS3 Robot" class="img-responsive"/>
+                            <img src="assets/images/portfolio/css3-robot.jpg" alt="jQuery Whack-A-Mole Game" class="img-responsive"/>
                           </a>
-                          <p>I built this robot out of HTML5, CSS3 and a little bit of jQuery. I built this to learn more in depth about using keyframes, animations, gradients and transform CSS3 .</p>
-                          <div class="desc-portfolio"><h5><a href="#">Robot</a><small>HTML5 & CSS3 Fun</small></h5></div>
+                          <p id="robot">I built this robot out of HTML5, CSS3 and a little bit of jQuery. I built this to learn more in depth about using keyframes, animations, gradients and transformations in CSS3.</p>
+                          <div class="desc-portfolio"><h5><a href="{{{action('HomeController@showRobot')}}}">Simple Robot</a><small>HTML5, CSS3 and jQuery</small></h5></div>
                         </div>
                       </li>
                       <li class="mix webdesign">
