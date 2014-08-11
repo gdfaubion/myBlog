@@ -329,6 +329,22 @@
                         <div class="box-block">
                           <div class="time-line">
                             <div class="item-event current">
+                              <span class="date">Active</span>
+                              <div class="event-content">
+                                <h4>Manager of Cloud Services</h4>
+                                <h5>Novatel Networks</h5>
+                                <p>I do important stuff or something.</p>
+                              </div>
+                            </div>
+                            <div class="item-event last current">
+                              <span class="date">Active</span>
+                              <div class="event-content">
+                                <h4> Website Administrator</h4>
+                                <h5>Texas Rancher Girl</h5>
+                                <p>I am responsible for maintaining <a href="http://texasranchergirl.com/">texasranchergirl.com</a> a blog dedicated to writing and showcasing life on a Texas cattle ranch. My responsibilities include updating blog posts, ensuring SEO accuracy, approving comments and examining traffic through the site. </p>
+                              </div>
+                            </div>
+                            <div class="item-event">
                               <span class="date">'11-'14</span>
                               <div class="event-content">
                                 <h4>Bartender</h4>
@@ -344,14 +360,6 @@
                                 <p>I worked at AE as an assistant manager for almost 4 years. Some of my responsibilities included setting sales goals for the day/week/year, providing training assistance to new Customer Service Representatives and Lead Customer Service Representatives, providing prompt and courteous customer service, professionally resolving customer issues, developing employee work schedules and distinguishing between acceptable and unacceptable employment applicants.</p>
                               </div>
                             </div>
-<!--                             <div class="item-event last">
-                              <span class="date">2012</span>
-                              <div class="event-content">
-                                <h4>Other Job</h4>
-                                <h5>Unknown Inc.</h5>
-                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                              </div>
-                            </div> -->
                           </div>
                         </div>
                         <!-- =========
@@ -370,7 +378,7 @@
                               <div class="event-content">
                                 <h4><a href="http://www.codeup.com/students/grace-faubion/">CodeUp</a></h4>
                                 <h5 >Intensive Computer Programming Training Program</h5>
-                                <p>Codeup is a 11-week training course that taught me all about Linux, Apache, MYSQL, PHP, The Laravel Framework, JavaScript and jQuery.</p>
+                                <p>Codeup is a 12-week training course that taught me all about Linux, Apache, MYSQL, PHP, The Laravel Framework, JavaScript and jQuery.</p>
                               </div>
                             </div>
 <!--                             <div class="item-event">
@@ -422,7 +430,7 @@
                               </div>
                             </li>
                             <li>
-                              <span class="caption-skill">HTML</span>
+                              <span class="caption-skill">HTML5</span>
                               <div class="progress">
                                 <div class="progress-bar" style="width: 95%;">
                                   <span>95% </span>
@@ -432,13 +440,13 @@
                             <li>
                               <span class="caption-skill">MYSQL</span>
                               <div class="progress">
-                                <div class="progress-bar"  style="width: 60%;">
-                                  <span>60% </span>
+                                <div class="progress-bar"  style="width: 50%;">
+                                  <span>50% </span>
                                 </div>
                               </div>
                             </li>
                             <li>
-                              <span class="caption-skill">CSS</span>
+                              <span class="caption-skill">CSS3</span>
                               <div class="progress">
                                 <div class="progress-bar"  style="width: 80%;">
                                   <span>80% </span>
@@ -448,8 +456,8 @@
                             <li>
                               <span class="caption-skill">JavaScript and jQuery</span>
                               <div class="progress">
-                                <div class="progress-bar"  style="width: 50%;">
-                                  <span>50% </span>
+                                <div class="progress-bar"  style="width: 60%;">
+                                  <span>60% </span>
                                 </div>
                               </div>
                             </li>
@@ -548,7 +556,7 @@
                         <div class="item-portfolio">
                           <a href="assets/images/portfolio/spotspy.png" class="preview-portfolio imgWrapper image-popup" style="height:155px">
                             <div class="mask"><div class="icn-center"><i class="fa fa-link "></i></div></div>
-                            <img src="assets/images/portfolio/spotspy.png" alt="" class="img-responsive"/>
+                            <img src="assets/images/portfolio/spotspy.png" alt="Spot Spy Web App" class="img-responsive"/>
                           </a>
                           <p>Spot Spy is a web app that allows the user to reserve a parking spot in a city lot. It was built in a vagrant enviroment using Laravel, JavaScript, jQuery, MYSQL, HTML5 and CSS. We also included two APIs TWILIO and Stripe. Go ahead and check it out!</p>
                           <div class="desc-portfolio"><h5><a href="http://spotspy.us/"> SpotSpy</a><small>a Web App</small></h5></div>
@@ -558,17 +566,27 @@
                         <div class="item-portfolio">
                           <a href="assets/images/portfolio/whackgame.png" class="preview-portfolio imgWrapper image-popup" style="height:170px">
                             <div class="mask"><div class="icn-center"><i class="fa fa-link "></i></div></div>
-                            <img src="assets/images/portfolio/whackgame.png" alt="" class="img-responsive"/>
+                            <img src="assets/images/portfolio/whackgame.png" alt="jQuery Whack-A-Mole Game" class="img-responsive"/>
                           </a>
                           <p>I built this "whack-a-mole" game using HTML5, CSS3 and jQuery. It was a fun project to complete and something I love to show off! It's Toy Story themed because why not? Go ahead and play or check it out over on my <a href="https://github.com/gdfaubion/Codeup.dev/blob/master/public/whack.html">github</a>!</p>
                           <div class="desc-portfolio"><h5><a href="{{{action('HomeController@showWhack')}}}">Whack-A-Buzz</a><small>a jQuery driven game.</small></h5></div>
                         </div>
                       </li>
                       <li class="mix webdesign">
+                        <div class="item-portfolio robot">
+                          <a href="assets/images/portfolio/robot.jpg" class="preview-portfolio imgWrapper image-popup" style="height:155px">
+                            <div class="mask"><div class="icn-center"><i class="fa fa-link "></i></div></div>
+                            <img src="assets/images/portfolio/robot.jpg" alt="HTMl5 and CSS3 Robot" class="img-responsive"/>
+                          </a>
+                          <p>I built this robot out of HTML5, CSS3 and a little bit of jQuery. I built this to learn more in depth about using keyframes, animations, gradients and transform CSS3 .</p>
+                          <div class="desc-portfolio"><h5><a href="#">Robot</a><small>HTML5 & CSS3 Fun</small></h5></div>
+                        </div>
+                      </li>
+                      <li class="mix webdesign">
                         <div class="item-portfolio">
                           <a href="assets/images/portfolio/blackjack.png" class="preview-portfolio imgWrapper image-popup" style="height:170px">
                             <div class="mask"><div class="icn-center"><i class="fa fa-link"></i></div></div>
-                            <img src="assets/images/portfolio/blackjack.png" alt="" class="img-responsive"/>
+                            <img src="assets/images/portfolio/blackjack.png" alt="Command Line Code Games" class="img-responsive"/>
                           </a>
                           <p>I created several command line applications when I ws first learning PHP. To list a few I created: Blackjack, 99 bottles, FizzBuzz, Currency Converter and a high-low game. You can check them out on my <a href="https://github.com/gdfaubion/codeup_exercises/tree/master/codeup_challenges">github</a>!</p>
                           <div class="desc-portfolio"><h5> BlackJack, 99 Bottles, Etc.. <small>Command Line Apps</small></h5></div>

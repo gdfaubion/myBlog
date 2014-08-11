@@ -10,7 +10,7 @@ class ContactController extends BaseController {
 		Mail::send('emails.contact', array('full_name' => Input::get('full_name'), 'phone_number' => Input::get('phone_number'), 'company_name' => Input::get('company_name'), 'email' => Input::get('email'), 'body' => Input::get('message')), function($message)
 		{
 
-			$message->to('gdfaubion@gmail.com', 'Grace')->subject('Test Email');
+			$message->to('gdfaubion@gmail.com', 'Grace')->subject('New Contact Inquiry');
 		});
 
 		$posts = Post::all();

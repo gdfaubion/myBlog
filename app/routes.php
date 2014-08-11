@@ -20,6 +20,9 @@ Route::post('/', 'ContactController@getContactUsForm');
 //whack-a-buzz game
 Route::get('/whack', 'HomeController@showWhack');
 
+//robot page
+Route::get('/CSS3-Robot', 'HomeController@showRobot');
+
 //Routes all post controller actions
 Route::resource('posts', 'PostsController');
 

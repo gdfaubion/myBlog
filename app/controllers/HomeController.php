@@ -29,6 +29,10 @@ class HomeController extends BaseController {
 	{
 		return View::make('whackGame');
 	}
+	public function showRobot()
+	{
+		return View::make('robot');
+	}
 	public function showAdmin()
 	{	
 		$posts = Post::all();
